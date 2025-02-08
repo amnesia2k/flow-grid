@@ -51,7 +51,7 @@ FlowGrid is a modern Kanban board application designed to simplify task manageme
 
    ```bash
    git clone https://github.com/amnesia2k/flow-grid.git
-   cd flowgrid
+   cd flow-grid
    ```
 
 2. **Install Dependencies**
@@ -112,8 +112,9 @@ src/
 ├── context/          // Context providers (state management)
 ├── utils/            // Helper functions (Appwrite integration)
 ├── styles/           // Global styles
-├── App.js            // Main application entry point
-├── index.js          // React DOM render
+├── App.jsx            // Main application entry point
+|--main.jsx
+├── index.html          // React DOM render
 ```
 
 ---
