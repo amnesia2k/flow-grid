@@ -113,8 +113,7 @@ src/
 ├── utils/            // Helper functions (Appwrite integration)
 ├── styles/           // Global styles
 ├── App.jsx            // Main application entry point
-|---main.jsx
-├── index.html          // React DOM render
+├── main.jsx          // React DOM render
 ```
 
 ---
