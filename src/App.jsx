@@ -3,6 +3,7 @@ import {
   QueryClientProvider,
   useQuery,
 } from "@tanstack/react-query";
+import { getData } from "./helpers/api";
 
 const queryClient = new QueryClient();
 
@@ -15,22 +16,12 @@ export default function App() {
 }
 
 function Example() {
-  const { isPending, error, data } = useQuery({
+  const { status, error, data } = useQuery({
     queryKey: ["githubRepoData"],
-    queryFn: async () => {
-      const res = await fetch(
-        "https://api.github.com/repos/amnesia2k/capstone-film-radar"
-      );
-
-      if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`);
-      }
-
-      return res.json();
-    },
+    queryFn: getData,
   });
 
-  if (isPending) {
+  if (status === "pending") {
     return (
       <div className="flex items-center justify-center min-h-screen text-3xl text-zinc-800">
         Loading...
@@ -38,7 +29,7 @@ function Example() {
     );
   }
 
-  if (error) {
+  if (status === "error") {
     return (
       <div className="flex items-center justify-center min-h-screen text-3xl text-zinc-800">
         {`An error occurred: ${error?.message}`}
