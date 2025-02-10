@@ -18,6 +18,7 @@ export default function TextField({
       <input
         className={`text-field ${fieldClasses}`}
         id={name}
+        name={name}
         placeholder={placeholder}
         {...rest}
       />

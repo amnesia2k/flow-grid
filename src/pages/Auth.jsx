@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { createUser, signIn } from "../lib/appwrite";
+// import { createUser, signIn } from "../lib/appwrite";
 import { toast } from "sonner";
 
 export default function Auth() {
